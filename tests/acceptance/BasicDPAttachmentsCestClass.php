@@ -24,6 +24,8 @@ class BasicDPAttachmentsCestClass
 
 		$I->setExtensionParam('attachment_path', 'images');
 
+		$I->updateInDatabase('extensions', ['enabled' => 1], ['name' => 'plg_content_dpattachments']);
+
 		$I->getModule('Filesystem')->deleteDir($I->getConfiguration('home_dir') . Attachment::ATTACHMENT_DIR);
 
 		mkdir($I->getConfiguration('home_dir') . Attachment::ATTACHMENT_DIR, 0777, true);

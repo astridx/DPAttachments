@@ -63,7 +63,7 @@ class Acceptance extends \Codeception\Module
 		/** @var JoomlaBrowser $browser */
 		$I = $this->getModule('JoomlaBrowser');
 
-		$I->doAdministratorLogin(null, null, false);
+		$I->doAdministratorLogin();
 		$I->amOnPage('administrator/index.php?option=com_categories&extension=com_content');
 		$I->click('New');
 		$I->fillField(['id' => 'jform_title'], $title);
